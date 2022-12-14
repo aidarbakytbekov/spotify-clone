@@ -1,6 +1,20 @@
 import { EndpointsEnum } from './types/endpoints';
+import queryString from 'query-string';
 
-export const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-export const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
-export const RESPONSE_TYPE = 'token';
-export const LOGIN_URL = `${EndpointsEnum.AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=true`;
+export enum RoutesEnum {
+  HOME = '/',
+  DISCOVER = '/discover',
+  SEARCH = '/search',
+  LOGIN = '/login',
+  LOGIN_WITH_CODE = '/loginWithCode',
+}
+export const authQueryParams = {
+  client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+  redirect_uri: 'http://localhost:3000/loginWithCode',
+  response_type: 'code',
+  show_dialog: true,
+};
+
+export const LOGIN_URL = `${
+  EndpointsEnum.AUTH_ENDPOINT
+}?${queryString.stringify(authQueryParams)}`;

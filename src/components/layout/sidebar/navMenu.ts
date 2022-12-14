@@ -1,8 +1,8 @@
 import { INavItem } from '@/components/navList/NavList';
 import { IoMdHeadset, IoMdHeart, IoMdList } from 'react-icons/io';
 import { MdSearch } from 'react-icons/md';
-import { RoutesEnum } from '@/appRouter/routes';
 import { BsPlayCircle } from 'react-icons/bs';
+import { RoutesEnum } from '@/shared/constants';
 
 export const navMenu: INavItem[] = [
   {
