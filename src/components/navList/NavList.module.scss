@@ -1,0 +1,14 @@
+@use '../../assets/styles/utils/' as *;
+
+.item {
+  padding: 10px 0;
+  @include flex(center);
+  gap: 6px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.iconWrapper {
+  font-size: 21px;
+  @include flex(center, center);
+}

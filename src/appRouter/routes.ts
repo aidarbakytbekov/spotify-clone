@@ -3,6 +3,8 @@ import { FunctionComponent } from 'react';
 
 export enum RoutesEnum {
   HOME = '/',
+  DISCOVER = '/discover',
+  SEARCH = '/search',
 }
 
 interface IRoute {

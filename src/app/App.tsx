@@ -1,4 +1,4 @@
-import { AppRouter } from '../appRouter/AppRouter';
+import { AppRouter } from '@/appRouter/AppRouter';
 import { Layout } from '@/components/layout/Layout';
 
 function App() {
