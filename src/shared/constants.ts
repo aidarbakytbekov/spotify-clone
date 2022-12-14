@@ -7,6 +7,9 @@ export enum RoutesEnum {
   SEARCH = '/search',
   LOGIN = '/login',
   LOGIN_WITH_CODE = '/loginWithCode',
+  FAVORITES = '/favorites',
+  PLAYLISTS = '/playlists',
+  CHARTS = '/charts',
 }
 export const authQueryParams = {
   client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,

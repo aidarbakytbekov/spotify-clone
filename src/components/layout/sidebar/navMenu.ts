@@ -13,21 +13,21 @@ export const navMenu: INavItem[] = [
   {
     display: 'Search',
     Icon: MdSearch,
-    path: RoutesEnum.DISCOVER,
+    path: RoutesEnum.SEARCH,
   },
   {
     display: 'Favorites',
     Icon: IoMdHeart,
-    path: RoutesEnum.DISCOVER,
+    path: RoutesEnum.FAVORITES,
   },
   {
     display: 'Playlists',
     Icon: BsPlayCircle,
-    path: RoutesEnum.DISCOVER,
+    path: RoutesEnum.PLAYLISTS,
   },
   {
     display: 'Charts',
     Icon: IoMdList,
-    path: RoutesEnum.DISCOVER,
+    path: RoutesEnum.CHARTS,
   },
 ];

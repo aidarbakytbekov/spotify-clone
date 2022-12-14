@@ -1,19 +1,23 @@
 import { authQueryParams } from '@/shared/constants';
 import axios, { retrieveAccessTokenInstance } from '../shared/api/api.config';
 import Cookies from 'js-cookie';
+import { TokensResponse, UserProfile } from '@/services/types/user';
 
 export const authService = {
   loginWithCode: async (code: string | null) => {
     try {
-      const res = await retrieveAccessTokenInstance.post('api/token', {
-        client_id: authQueryParams.client_id,
-        redirect_uri: authQueryParams.redirect_uri,
-        grant_type: 'authorization_code',
-        code,
-        client_secret: process.env.REACT_APP_CLIENT_SECRET,
-      });
+      const res = await retrieveAccessTokenInstance.post<TokensResponse>(
+        'api/token',
+        {
+          client_id: authQueryParams.client_id,
+          redirect_uri: authQueryParams.redirect_uri,
+          grant_type: 'authorization_code',
+          code,
+          client_secret: process.env.REACT_APP_CLIENT_SECRET,
+        }
+      );
       if (res.data) {
-        const { refresh_token, access_token, expires_in } = res.data;
+        const { refresh_token, access_token } = res.data;
         Cookies.set('access_token', access_token);
         Cookies.set('refresh_token', refresh_token);
       }
@@ -35,12 +39,12 @@ export const authService = {
       Cookies.set('access_token', res.data.access_token);
     }
   },
-  getProfile: async () => {
+  getProfile: async (): Promise<UserProfile> => {
     try {
-      const res = await axios.get('/me');
+      const res = await axios.get<UserProfile>('/me');
       return res.data;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   },
 };
