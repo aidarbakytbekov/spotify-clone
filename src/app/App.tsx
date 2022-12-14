@@ -1,7 +1,12 @@
-import React from 'react';
+import { AppRouter } from '../appRouter/AppRouter';
+import { Layout } from '@/components/layout/Layout';
 
 function App() {
-  return <div className="App">app</div>;
+  return (
+    <Layout>
+      <AppRouter />
+    </Layout>
+  );
 }
 
 export default App;

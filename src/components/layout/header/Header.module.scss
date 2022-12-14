@@ -1,0 +1,19 @@
+@use '../../../assets/styles/utils/' as *;
+
+.wrapper {
+  grid-area: header;
+  height: 150px;
+  background-color: #ffb5a8;
+  padding: 25px;
+  color: #fff;
+}
+
+.container {
+  @include flex(end, end);
+  flex-direction: column;
+}
+
+h2 {
+  @include flex(center, center);
+  gap: 10px;
+}
